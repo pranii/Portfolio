@@ -7,6 +7,41 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
 }
+body .experience-section {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.experience-entry {
+    display: flex;
+    align-items: center; /* Damit die rotierten Jahreszahlen vertikal zentriert sind */
+    margin-bottom: 5px;
+}
+
+
+.years {
+    writing-mode: vertical-lr;
+    font-weight: 700;
+    margin-right: 20px;
+    writing-mode: vertical-lr;
+    transform-origin: right center; /* Setzen Sie den Drehpunkt auf die rechte Mitte */
+    white-space: nowrap; /* Verhindert, dass die Jahreszahlen umbrechen */
+    height: 100px; /* Stellen Sie sicher, dass die Höhe ausreicht, um die rotierte Jahreszahl unterzubringen */
+    line-height: 1; /* Anpassung der Zeilenhöhe */
+    margin-top: 50px; /* Verschieben Sie die Jahreszahl nach unten, um sie korrekt zu positionieren */
+}
+
+.experience-title {
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.experience-item {
+    margin-bottom: 5px;
+}
+
 
 a {
     color: #007bff;
@@ -17,7 +52,14 @@ a {
 a:hover {
     color: #0056b3;
 }
+.right-side {
+    display: flex;
+    justify-content: space-between;
+}
 
+.column {
+    padding:  400px; /* Erhöht das Padding zu beiden Seiten der Spalte */
+}
 .fullscreen-left {
     position: absolute; /* oder position: fixed; je nach Bedarf */
     left: 0;
@@ -28,8 +70,8 @@ a:hover {
 header {
     background-color: #333;
     color: #fff;
-    padding: 1rem 0;
-    text-align: center;
+    padding: 5rem;
+    text-align: left;
 }
 
 #über-mich .content-wrapper {
@@ -92,11 +134,17 @@ header {
     display: block; /* Stellt sicher, dass der h3-Tag den gesamten verfügbaren horizontalen Raum einnimmt */
     text-align: justify; /* Stellt den Text im Blockabsatz dar */
     
-    font-size: 1.5rem;
+    font-size: 5rem;
     margin-top: 1rem;
 }
 
-
+h3 {
+    display: block; /* Stellt sicher, dass der h3-Tag den gesamten verfügbaren horizontalen Raum einnimmt */
+    text-align: justify; /* Stellt den Text im Blockabsatz dar */
+    
+    font-size: 3rem;
+    margin-top: 1rem;
+}
 
 .section-title {
     font-size: 5rem;
@@ -113,12 +161,30 @@ header {
 }
 
 .content-wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    align-items: start; /* Passt die vertikale Ausrichtung an */
+    padding: 2rem 0;
+}
+
+.left-side {
+    flex: 1;
+    padding-right: 2rem; /* Fügt etwas Polsterung hinzu, um das Bild vom Text zu trennen */
+}
+
+.left-side img {
+    width: 100%;
+    max-height: 100vh;
+    object-fit: cover;
+}
+
+.right-side {
+    flex: 2;
+    display: flex; /* Verwendet Flexbox, um die Spalten nebeneinander anzuzeigen */
+}
+
+.column {
+    flex: 1; /* Beide Spalten nehmen den gleichen Platz ein */
+    padding: 0 1rem; /* Fügt etwas Polsterung zwischen den Spalten hinzu */
 }
 .loader-wrapper {
     position: fixed;
@@ -132,7 +198,17 @@ header {
     align-items: center;
     z-index: 1000;
 }
-
+.experience-section {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+.experience-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.experience-item {
+    margin-bottom: 5px;
+}
 .loader {
     font-size: 3rem;
     font-weight: bold;
@@ -156,14 +232,14 @@ header {
 }
 
 #über-mich h2 {
-    font-size: 3rem;
+    font-size: 5rem;
     margin-bottom: 30px;
     color: #333;
     text-align: center;
 }
 
 #über-mich p {
-    font-size: 1.2rem;
+    font-size: 5 rem;
     color: #666;
     text-align: center;
     max-width: 800px;
@@ -220,7 +296,7 @@ header {
     color: #000; /* Setzt die Textfarbe auf Schwarz */
     border: none;
     padding: 0.5rem 1rem;
-    font-size: 1.5rem;
+    font-size: 1.5 rem;
     transition: background 0.3s;
 }
 
@@ -278,7 +354,7 @@ header {
 }
 
 .projekt-karte h3 {
-    font-size: 1.5rem;
+    font-size: 5rem;
     margin-bottom: 15px;
 }
 
